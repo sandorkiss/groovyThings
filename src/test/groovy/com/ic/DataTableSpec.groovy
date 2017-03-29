@@ -2,7 +2,9 @@ package com.ic
 
 import spock.lang.Shared
 import spock.lang.Specification
+import spock.lang.Unroll
 
+@Unroll
 class DataTableSpec extends Specification {
 
     @Shared
@@ -12,7 +14,7 @@ class DataTableSpec extends Specification {
         dataTable = new DataTable()
     }
 
-    def "use data pipes"() {
+    def "use data pipes: #x + #y = #sum"() {
         expect:
         dataTable.addValues(x, y) == sum
 
